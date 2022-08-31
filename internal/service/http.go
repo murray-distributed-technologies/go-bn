@@ -67,7 +67,7 @@ func (h *rpc) do(ctx context.Context, r request, out interface{}) error {
 			return nil, err
 		}
 		req.SetBasicAuth(h.cfg.Username, h.cfg.Password)
-		req.Header.Add("Content-Type", "text/plain")
+		req.Header.Add("Content-Type", "application/json")
 
 		resp, err := h.c.Do(req)
 		if err != nil {
